@@ -1,0 +1,30 @@
+.sidebar {
+    background-color: #fff;
+    
+    .sidebar-menu{
+        ul{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            li {
+                list-style: none;
+                margin: 20px;
+                padding: 0;
+            }
+            a{
+                font-size: 1.5rem;
+                padding: 10px;
+                text-transform: capitalize;
+                text-decoration: none;
+                color: rgb(39, 39, 39);
+                &:hover{
+                    background-color: rgb(59, 59, 65);
+                    color: #fff;
+                }
+        }
+        
+        
+        }
+    }
+}
