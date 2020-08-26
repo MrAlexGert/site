@@ -4,10 +4,19 @@ import './Sidebar.scss'
 
 class Sidebar extends React.Component {
 
+
+    showSidebar = () => {
+        let sidebar = document.getElementById('sidebar')
+        sidebar.classList.toggle('sidebar_close')
+        // (sidebar.classList.contains('sidebar')) ? sidebar.classList.remove('sidebar') : ''
+    }
+
     render() {
         return (
-            <nav className="sidebar">
-                
+            <nav className="sidebar" id="sidebar">
+                <div>
+                    <button onClick={this.showSidebar}>go</button>
+                </div>
                 <div>
                     <div className="sidebar-menu">
                         <ul>

@@ -7,20 +7,22 @@ import Header from './Header/Header'
 import Sidebar from './Sidebar/Sidebar'
 import Footer from './Footer/Footer'
 //Content components
-import Profile from './Content/Profile'
-import Messages from './Content/Messages'
-import News from './Content/News'
-import Music from './Content/Music'
+import Profile from './Content/Profile/Profile'
+import Messages from './Content/Messages/Messages'
+import News from './Content/News/News'
+import Music from './Content/Music/Music'
 
 
 class App extends React.Component {
 
+  
   render() {
     return (
       <div className="container">
 
         <Header />
-        <div className="screen">
+        <main className="screen">
+         
           <Sidebar />
 
           <Router>
@@ -31,7 +33,7 @@ class App extends React.Component {
               <Route exact path="/music" component={Music} />
             </Switch>
           </Router>
-        </div>
+        </main>
         <Footer />
 
       </div>

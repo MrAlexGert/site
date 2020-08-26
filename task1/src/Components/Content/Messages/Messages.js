@@ -1,15 +1,15 @@
 import React from 'react'
-import './Content.scss'
+import '../Content.scss'
 
 
 class Messages extends React.Component {
 
     render() {
         return (
-            <main className="content">
+            <div className="content">
                 Messages
 
-            </main>
+            </div>
         )
     }
 }

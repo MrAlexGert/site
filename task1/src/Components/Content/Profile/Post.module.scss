@@ -1,0 +1,34 @@
+.post {
+    color: #272727;
+    max-width: 700px;
+    margin: 20px 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #6a92b3;
+    background-color: #65809e;
+    box-shadow: 0 5px 5px rgb(80, 78, 78);
+    .avatar_img img{
+        width: 50px;
+        border-radius: 50%;
+        margin-right: 20px;
+        border: 2px solid #6a92b3;
+    }
+    .avatar_text {
+        background-color: #fff;
+        border: 2px solid #6a92b3;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 0 10px;
+        
+        .user_name{
+            font-size: 20px;
+            line-height: 30px;
+        }
+        p {
+            hyphens: auto;
+            word-wrap: break-word;
+        }
+    }
+    
+}

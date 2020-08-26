@@ -1,15 +1,15 @@
 import React from 'react'
-import './Content.scss'
+import '../Content.scss'
 
 
 class Music extends React.Component {
 
     render() {
         return (
-            <main className="content">
+            <div className="content">
                 Music
 
-            </main>
+            </div>
         )
     }
 }
