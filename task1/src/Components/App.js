@@ -15,24 +15,24 @@ import Music from './Content/Music/Music'
 
 class App extends React.Component {
 
-  
+
   render() {
+    
     return (
       <div className="container">
 
         <Header />
-        <main className="screen">
-         
-          <Sidebar />
-
+        <main className="main">
           <Router>
+            <Sidebar />
             <Switch>
               <Route exact path="/" component={Profile} />
-              <Route exact path="/message" component={Messages} />
+              <Route  path="/message" render={() => <Messages UsersData={this.props.UsersData} />} />
               <Route exact path="/news" component={News} />
               <Route exact path="/music" component={Music} />
             </Switch>
           </Router>
+
         </main>
         <Footer />
 

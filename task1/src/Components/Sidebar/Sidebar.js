@@ -1,36 +1,37 @@
 import React from 'react'
 import './Sidebar.scss'
+import { NavLink } from 'react-router-dom';
 
 
 class Sidebar extends React.Component {
 
 
-    showSidebar = () => {
-        let sidebar = document.getElementById('sidebar')
-        sidebar.classList.toggle('sidebar_close')
-        // (sidebar.classList.contains('sidebar')) ? sidebar.classList.remove('sidebar') : ''
-    }
+    // showSidebar = () => {
+    //     let sidebar = document.getElementById('sidebar')
+    //     sidebar.classList.toggle('sidebar_close')
+    //     // (sidebar.classList.contains('sidebar')) ? sidebar.classList.remove('sidebar') : ''
+    // }
 
     render() {
         return (
             <nav className="sidebar" id="sidebar">
-                <div>
+                {/* <div>
                     <button onClick={this.showSidebar}>go</button>
-                </div>
+                </div> */}
                 <div>
                     <div className="sidebar-menu">
                         <ul>
                             <li>
-                                <a href="/">profile</a>
+                                <NavLink activeClassName="active_link" to="/">profile</NavLink>
                             </li>
                             <li>
-                                <a href="/message">messages</a>
+                                <NavLink activeClassName="active_link" to="/message">messages</NavLink>
                             </li>
                             <li>
-                                <a href="/news">news</a>
+                                <NavLink activeClassName="active_link" to="/news">news</NavLink>
                             </li>
                             <li>
-                                <a href="/music">music</a>
+                                <NavLink activeClassName="active_link" to ="/music">music</NavLink>
                             </li>
                         </ul>
                     </div>

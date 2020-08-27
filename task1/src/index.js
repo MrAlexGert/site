@@ -4,9 +4,15 @@ import './index.scss';
 import App from './Components/App';
 import * as serviceWorker from './serviceWorker';
 
+// data
+import state from './redux/state'
+
+
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App UsersData={state.UsersData}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

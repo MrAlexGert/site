@@ -1,6 +1,7 @@
 .sidebar {
     background-color: #fff;
     .sidebar-menu{
+        position: fixed;
         ul{
             display: flex;
             flex-direction: column;
@@ -18,9 +19,13 @@
                 text-decoration: none;
                 color: #272727;
                 &:hover{
-                    background-color: #3b3b41;
+                    background-color: #4f5153;
                     color: #fff;
                 }
+                &.active_link {
+                    color: red;
+                }
+            
         }
         
         
