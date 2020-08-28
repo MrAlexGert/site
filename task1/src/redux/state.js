@@ -1,5 +1,6 @@
 
-const state = {
+
+export const state = {
     UsersData: [
         { id: "1", name: "user1", massage: 'massageUser-1' },
         { id: "2", name: "user2", massage: 'massageUser-1' },
@@ -8,4 +9,13 @@ const state = {
     ]
 }
 
-export default state
+export const post = (postMassage) => {
+    let newPost = {
+        id: '5',
+        massage: postMassage,
+        name: 'user5'
+    }
+    state.UsersData.push(newPost)
+}
+
+

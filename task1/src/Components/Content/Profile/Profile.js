@@ -12,16 +12,17 @@ class Profile extends React.Component {
         }
         this.newPostElement = React.createRef()
     }
+
     publicPost = () => {
-        const text = this.newPostElement.current.value
-       
+        const text = this.newPostElement.current.value // get value textarea
+        
+        this.props.addPost(text) // get function in state.js-post() and push new massage in state.js-state-UsersData
         this.setState({ textPost: text })
-        this.createPost(text)
-        //text = ''
-    }
-    createPost = (text) => {
         this.state.newPost.push( <Post text={text} key={text}/> )   
+        this.newPostElement.current.value = ""
     }
+
+
 
     render() {
         return (

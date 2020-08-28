@@ -26,7 +26,7 @@ class App extends React.Component {
           <Router>
             <Sidebar />
             <Switch>
-              <Route exact path="/" component={Profile} />
+              <Route exact path="/" render={() => <Profile addPost={this.props.addPost} />} />
               <Route  path="/message" render={() => <Messages UsersData={this.props.UsersData} />} />
               <Route exact path="/news" component={News} />
               <Route exact path="/music" component={Music} />

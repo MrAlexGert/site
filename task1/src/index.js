@@ -1,21 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './Components/App';
+
 import * as serviceWorker from './serviceWorker';
 
 // data
-import state from './redux/state'
+import {state} from './redux/state'
+import {post} from './redux/state'
+// render
+import {renderEntireTree} from './render'
 
 
 
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App UsersData={state.UsersData}/>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+renderEntireTree(state.UsersData, post)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
