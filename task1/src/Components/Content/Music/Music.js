@@ -2,16 +2,14 @@ import React from 'react'
 import '../Content.scss'
 
 
-class Music extends React.Component {
-
-    render() {
+const Music = () => {
         return (
             <div className="content">
                 Music
 
             </div>
         )
-    }
+    
 }
 
 

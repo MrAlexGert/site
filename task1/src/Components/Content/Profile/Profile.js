@@ -3,54 +3,52 @@ import Fone from '../../../img/fone.jpg'
 import '../Content.scss'
 import Post from './Post'
 
-class Profile extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            textPost: '',
-            newPost: []
-        }
-        this.newPostElement = React.createRef()
+import {addPostActionCreator, updateNewPostTextActionCreator} from '../../../redux/profile_reduser'
+
+const Profile = (props) => {
+    const newPostElement = React.createRef()
+
+    const addPost = () => props.dispatch(addPostActionCreator())
+
+    const onPostChange = () => {
+        let text = newPostElement.current.value
+        props.dispatch(updateNewPostTextActionCreator(text))
     }
 
-    publicPost = () => {
-        const text = this.newPostElement.current.value // get value textarea
-        
-        this.props.addPost(text) // get function in state.js-post() and push new massage in state.js-state-UsersData
-        this.setState({ textPost: text })
-        this.state.newPost.push( <Post text={text} key={text}/> )   
-        this.newPostElement.current.value = ""
-    }
-
-
-
-    render() {
+    
+    const postElements = props.profileDate.map(el => {
         return (
-            <div className="content">
-                <div className="profale">
-
-
-                    <div className="content-img-fone">
-                        <img src={Fone} width="100%" height="100%" alt="fone" />
-                    </div>
-
-                    <div>ava+dickriotion</div>
-
-                    <div>
-                        <textarea ref={this.newPostElement} id="text-post"></textarea>
-                        <button onClick={this.publicPost}>new post</button>
-                    </div>
-                    <div>
-                        {this.state.newPost}
-                    </div>
-                    
-
-
-                    
-                </div>
+            <div key={el.id}>
+                <Post text={el.message} name={el.name} />
             </div>
         )
-    }
+    })
+    return (
+        <div className="content">
+            <div className="profale">
+
+
+                <div className="content-img-fone">
+                    <img src={Fone} width="100%" height="100%" alt="fone" />
+                </div>
+
+                <div>ava+dickriotion</div>
+
+                <div>
+                    <textarea ref={newPostElement} onChange={onPostChange} value={props.newPostValue} />
+                    <button onClick={addPost}>new post</button>
+                </div>
+                <div>
+                    {postElements}
+                </div>
+
+
+
+
+            </div>
+        </div>
+    )
+
 }
 
 

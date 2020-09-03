@@ -1,16 +1,14 @@
 import React from 'react'
 import '../Content.scss'
 
-class News extends React.Component {
-
-    render() {
+const News = () => {
         return (
             <div className="content">
                 news
 
             </div>
         )
-    }
+    
 }
 
 

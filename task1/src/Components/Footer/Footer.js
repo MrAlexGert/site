@@ -2,15 +2,14 @@ import React from 'react'
 import './Footer.scss'
 
 
-class Footer extends React.Component {
+const Footer = () => {
 
-  render() {
     return (
         <footer className="footer">
           footer
         </footer>
     )
-  }
+  
 }
 
 

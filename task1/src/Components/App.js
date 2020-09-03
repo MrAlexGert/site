@@ -13,32 +13,42 @@ import News from './Content/News/News'
 import Music from './Content/Music/Music'
 
 
-class App extends React.Component {
+const App = (props) => {
+  console.log(props.state)
 
 
-  render() {
-    
-    return (
-      <div className="container">
+  return (
+    <div className="container">
 
-        <Header />
-        <main className="main">
-          <Router>
-            <Sidebar />
-            <Switch>
-              <Route exact path="/" render={() => <Profile addPost={this.props.addPost} />} />
-              <Route  path="/message" render={() => <Messages UsersData={this.props.UsersData} />} />
-              <Route exact path="/news" component={News} />
-              <Route exact path="/music" component={Music} />
-            </Switch>
-          </Router>
+      <Header />
+      <main className="main">
+        <Router>
+          <Sidebar />
+          <Switch>
 
-        </main>
-        <Footer />
+            <Route exact path="/" render={() => <Profile
+              profileDate={props.state.profilePage.posts}
+              newPostValue={props.state.profilePage.newPostValue}
+              dispatch={props.dispatch}
+            />} />
 
-      </div>
-    )
-  }
+            <Route path="/message" render={() => <Messages
+              messagePage={props.state.messagePage}
+              newMessageText={props.state.messagePage.newMessageText}
+              dispatch={props.dispatch}
+            />} />
+
+            <Route exact path="/news" component={News} />
+            <Route exact path="/music" component={Music} />
+          </Switch>
+        </Router>
+
+      </main>
+      <Footer />
+
+    </div>
+  )
+
 }
 
 

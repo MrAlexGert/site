@@ -6,13 +6,10 @@ import { NavLink } from 'react-router-dom'
 
 
 
-class DialogItem extends React.Component {
-   
-
-    render() {
+const DialogItem = (props) => {
         return (
             <div>
-                {this.props.usersData.map(el => {
+                {props.dialogItem.map(el => {
                     return (
                         <div  key={el.id}>
                             <NavLink to={`/message/${el.id}`}>{el.name}</NavLink>
@@ -21,7 +18,6 @@ class DialogItem extends React.Component {
                 })} 
             </div>
         )
-    }
 }
 
 

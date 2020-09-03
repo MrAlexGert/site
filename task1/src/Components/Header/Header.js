@@ -3,11 +3,8 @@ import './Header.scss'
 
 import Logo from '../../img/logo.png'
 
-class Header extends React.Component {
-  // constructor(props) {
-    
-  // }
-  render() {
+const Header = (props) => {
+  
     return (
         <header className="header">
           <div className="logo">
@@ -18,7 +15,6 @@ class Header extends React.Component {
           </div>
         </header>
     )
-  }
 }
 
 
