@@ -1,7 +1,18 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+const initialState = {
 
-const profileReduser = (state, action) => {
+    posts: [
+        { id: "1", name: "user1", message: 'massageUser-1' },
+        { id: "2", name: "user2", message: 'massageUser-2' },
+        { id: "3", name: "user3", message: 'massageUser-3' },
+        { id: "4", name: "user4", message: 'massageUser-4' }
+    ],
+    newPostValue: '',
+
+}
+
+const profileReduser = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
             let newPost = {
@@ -9,12 +20,17 @@ const profileReduser = (state, action) => {
                 message: state.newPostValue,
                 name: 'Muser5'
             }
-            state.posts.push(newPost)
-            state.newPostValue = ''
-            return state
+            return {
+                ...state,
+                posts: [...state.posts, newPost],
+                
+                newPostValue: ''
+            }
         case UPDATE_NEW_POST_TEXT:
-            state.newPostValue = action.newText
-            return state
+            return {
+                ...state,
+                newPostValue: action.newText
+            }
         default:
             return state
     }

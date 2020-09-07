@@ -1,17 +1,14 @@
 import React from 'react'
 import '../Content.scss'
 import './Messages.scss'
-import {addMessageActionCreator, ubdateNewMessageBodyActionCreator} from '../../../redux/dialogs-reduser'
 
 const MessagesItem = (props) => {
 
-    const messageSend = () => {
-        props.dispatch(ubdateNewMessageBodyActionCreator())
-    }
+    const messageSend = () => props.messageSend()
 
     const toWriteMessage = (e) => {
         let text = e.target.value
-        props.dispatch(addMessageActionCreator(text))
+        props.toWriteMessage(text)
     }
  
         return (

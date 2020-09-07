@@ -7,14 +7,16 @@ import Header from './Header/Header'
 import Sidebar from './Sidebar/Sidebar'
 import Footer from './Footer/Footer'
 //Content components
-import Profile from './Content/Profile/Profile'
+// import Profile from './Content/Profile/Profile'
+
+import ProfileContiner from './Content/Profile/ProfileContainer'
 import Messages from './Content/Messages/Messages'
 import News from './Content/News/News'
 import Music from './Content/Music/Music'
 
 
 const App = (props) => {
-  console.log(props.state)
+  console.log()
 
 
   return (
@@ -26,16 +28,16 @@ const App = (props) => {
           <Sidebar />
           <Switch>
 
-            <Route exact path="/" render={() => <Profile
-              profileDate={props.state.profilePage.posts}
-              newPostValue={props.state.profilePage.newPostValue}
-              dispatch={props.dispatch}
+            <Route exact path="/" render={() => <ProfileContiner
+              // profileDate={props.state.profileReduser.posts}
+              // newPostValue={props.state.profileReduser.newPostValue}
+              // dispatch={props.dispatch}
             />} />
 
             <Route path="/message" render={() => <Messages
-              messagePage={props.state.messagePage}
-              newMessageText={props.state.messagePage.newMessageText}
-              dispatch={props.dispatch}
+              // messagePage={props.state.dialogReduser}
+              // newMessageText={props.state.dialogReduser.newMessageText}
+              // dispatch={props.dispatch}
             />} />
 
             <Route exact path="/news" component={News} />

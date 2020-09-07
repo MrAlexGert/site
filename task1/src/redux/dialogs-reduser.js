@@ -1,19 +1,42 @@
 const NEW_MESSAGE_TEXT = 'NEW-MESSAGE'
 const SEND_MESSAGE = 'SEND-MESSAGE'
 
-const dialogReduser = (state, action) => {
+const initialState = {
+
+        users: [
+            { id: "1", name: "Muser1" },
+            { id: "2", name: "Muser2" },
+            { id: "3", name: "Muser3" },
+            { id: "4", name: "Muser4" }
+        ],
+        message: [
+            { id: "1", message: 'massageUser-1' },
+            { id: "2", message: 'massageUser-2' },
+            { id: "3", message: 'massageUser-3' },
+            { id: "4", message: 'massageUser-4' }
+        ],
+        newMessageText: '',
+    
+}
+
+
+const dialogReduser = (state = initialState, action) => {
     switch (action.type) {
         case SEND_MESSAGE:
             let newMessage = {
                 id: '6',
                 message: state.newMessageText,
             }
-            state.message.push(newMessage)
-            state.newMessageText = ''
-            return state
+            return {
+                ...state,
+                message: [...state.message, newMessage],
+                newMessageText: ''
+            }
         case NEW_MESSAGE_TEXT:
-            state.newMessageText = action.newText
-            return state
+            return {
+                ...state,
+                newMessageText: action.newText
+            }
         default:
             return state
     }

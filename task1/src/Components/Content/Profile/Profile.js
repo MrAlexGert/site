@@ -3,16 +3,16 @@ import Fone from '../../../img/fone.jpg'
 import '../Content.scss'
 import Post from './Post'
 
-import {addPostActionCreator, updateNewPostTextActionCreator} from '../../../redux/profile_reduser'
 
 const Profile = (props) => {
+    // console.log('pro',props)
     const newPostElement = React.createRef()
 
-    const addPost = () => props.dispatch(addPostActionCreator())
+    const addPost = () => props.addPostChange()
 
     const onPostChange = () => {
         let text = newPostElement.current.value
-        props.dispatch(updateNewPostTextActionCreator(text))
+        props.updatePostChange(text)
     }
 
     

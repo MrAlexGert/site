@@ -1,31 +1,30 @@
 import React from 'react'
 import '../Content.scss'
 import './Messages.scss'
-import DialogItem from './DialogItem'
-import MessageItem from './MessageItem'
+import DialogItemContainer from './DialogItemContainer'
+
+import MessageItemContainer from './MessageItemContainer'
 
 
 
 
-const Messages = (props) => {
+const Messages = () => {
 
-        return (
-            <div className="content">
-                <div className="messages">
+    return (
+        <div className="content">
+            <div className="messages">
 
-                    <div className="users_dialogs">
-                        <DialogItem dialogItem={props.messagePage.users} />
+                <div className="users_dialogs">
+                    <DialogItemContainer />
 
-                    </div>
-                    <div className="users_messages">
-                        <MessageItem messageItem={props.messagePage.message} 
-                        newMessageText={props.newMessageText} 
-                        dispatch={props.dispatch}/>
-                    </div>
                 </div>
-
+                <div className="users_messages">
+                    <MessageItemContainer />
+                </div>
             </div>
-        )
+
+        </div>
+    )
 }
 
 

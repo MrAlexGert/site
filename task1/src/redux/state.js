@@ -2,12 +2,8 @@
 import profileReduser from './profile_reduser'
 import dialogReduser from './dialogs-reduser'
 
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
-const NEW_MESSAGE_TEXT = 'NEW-MESSAGE'
-const SEND_MESSAGE = 'SEND-MESSAGE'
 
-
+// данные бизнес логики 
 const store = {
     _state: {
         profilePage: {
