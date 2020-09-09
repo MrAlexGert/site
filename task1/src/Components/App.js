@@ -7,12 +7,11 @@ import Header from './Header/Header'
 import Sidebar from './Sidebar/Sidebar'
 import Footer from './Footer/Footer'
 //Content components
-// import Profile from './Content/Profile/Profile'
 
 import ProfileContiner from './Content/Profile/ProfileContainer'
 import Messages from './Content/Messages/Messages'
-import News from './Content/News/News'
 import Music from './Content/Music/Music'
+import UsersContainer from './Content/Users/UsersContainer'
 
 
 const App = (props) => {
@@ -40,7 +39,7 @@ const App = (props) => {
               // dispatch={props.dispatch}
             />} />
 
-            <Route exact path="/news" component={News} />
+            <Route exact path="/users" component={UsersContainer} />
             <Route exact path="/music" component={Music} />
           </Switch>
         </Router>
