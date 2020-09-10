@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 
 
 const mapStateToProps = (state) => {
-    console.log(state)
+    // console.log(state)
     return {
         usersItem: state.usersReduser.users
     }

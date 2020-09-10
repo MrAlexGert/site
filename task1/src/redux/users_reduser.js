@@ -19,14 +19,14 @@ const usersReduser = (state = initialState, action) => {
             return {
                 ...state,
                 users: state.users.map(el => {
-                    return (el.id === action.userId) ? { ...el, follow: true, } : el
+                    return (el.id === action.userId) ? { ...el, followed: true, } : el
                 })
             }
         case UNFOLLOW:
             return {
                 ...state,
                 users: state.users.map(el => {
-                    return (el.id === action.userId) ? { ...el, follow: false, } : el
+                    return (el.id === action.userId) ? { ...el, followed: false, } : el
                 })
             }
         case SET_USERS:
