@@ -1,6 +1,6 @@
 import React from 'react'
 import './Sidebar.scss'
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
 
 const Sidebar = () => {
@@ -11,7 +11,7 @@ const Sidebar = () => {
                     <div className="sidebar-menu">
                         <ul>
                             <li>
-                                <NavLink activeClassName="active_link" to="/">profile</NavLink>
+                                <NavLink activeClassName="active_link" to="/profile">profile</NavLink>
                             </li>
                             <li>
                                 <NavLink activeClassName="active_link" to="/message">messages</NavLink>

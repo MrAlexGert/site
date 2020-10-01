@@ -42,7 +42,7 @@ const dialogReduser = (state = initialState, action) => {
     }
 }
 
-export const ubdateNewMessageBodyActionCreator = () => ({ type: SEND_MESSAGE })
-export const addMessageActionCreator = (text) => ({ type: NEW_MESSAGE_TEXT, newText: text })
+export const ubdateNewMessageBody = () => ({ type: SEND_MESSAGE })
+export const addMessage = (text) => ({ type: NEW_MESSAGE_TEXT, newText: text })
 
 export default dialogReduser

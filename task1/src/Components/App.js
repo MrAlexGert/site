@@ -1,11 +1,12 @@
 import React from 'react'
 import './App.scss'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import {Route} from 'react-router-dom' // bilding component BrauserRouter
 
 //Components
-import Header from './Header/Header'
+import HeaderContainer from './Header/HeaderContainer'
 import Sidebar from './Sidebar/Sidebar'
 import Footer from './Footer/Footer'
+import Login from './Login/Login'
 //Content components
 
 import ProfileContiner from './Content/Profile/ProfileContainer'
@@ -15,34 +16,31 @@ import UsersContainer from './Content/Users/UsersContainer'
 
 
 const App = (props) => {
-  console.log()
+
 
 
   return (
     <div className="container">
 
-      <Header />
+      <HeaderContainer />
       <main className="main">
-        <Router>
-          <Sidebar />
-          <Switch>
 
-            <Route exact path="/" render={() => <ProfileContiner
-              // profileDate={props.state.profileReduser.posts}
-              // newPostValue={props.state.profileReduser.newPostValue}
-              // dispatch={props.dispatch}
-            />} />
+        <Sidebar />
 
-            <Route path="/message" render={() => <Messages
-              // messagePage={props.state.dialogReduser}
-              // newMessageText={props.state.dialogReduser.newMessageText}
-              // dispatch={props.dispatch}
-            />} />
 
-            <Route exact path="/users" component={UsersContainer} />
-            <Route exact path="/music" component={Music} />
-          </Switch>
-        </Router>
+        <Route path="/profile/:userId?" render={() => <ProfileContiner
+
+        />} />
+
+        <Route path="/message" render={() => <Messages
+
+        />} />
+
+        <Route exact path="/users" component={UsersContainer} />
+        <Route exact path="/music" component={Music} />
+        <Route path="/login" component={Login} />
+
+
 
       </main>
       <Footer />
